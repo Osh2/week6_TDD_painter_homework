@@ -1,8 +1,9 @@
-const Paint = function(num_litres){
-    this.num_litres = num_litres;
+const Paint = function(numLitres){
+    this.numLitres = numLitres;
 };
-
-
+Paint.prototype.empty = function (){
+    this.numLitres = 0
+};
 
 
 module.exports = Paint;

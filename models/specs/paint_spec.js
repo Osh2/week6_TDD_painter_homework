@@ -2,17 +2,12 @@ const assert = require('assert');
 const Paint = require('../paint.js');
 
 describe('Paint', function(){
-    //arrange
-    // let redPaint;
-    // beforeEach(function(){
-    //     redPaint = new Paint(5)
-    // });
-
+    
     it("should be empty", function(){
         //arrange
         redPaint = new Paint(0)
         //act
-        litres = redPaint.num_litres
+        litres = redPaint.numLitres
         //assert
         assert.strictEqual(litres, 0)
     });
@@ -21,9 +16,19 @@ describe('Paint', function(){
         //arrange
         redPaint = new Paint(5)
         //act
-        litres = redPaint.num_litres
+        litres = redPaint.numLitres
         //assert
         assert.strictEqual(litres, 5)
+    });
+
+    it("should be able to empty itself", function(){
+        //arrange
+        redPaint = new Paint(5)
+        //act
+        redPaint.empty()
+        litres = redPaint.numLitres
+        //assert
+        assert.strictEqual(litres, 0)
     });
 
 
