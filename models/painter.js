@@ -25,4 +25,10 @@ Painter.prototype.enoughPaint = function(room){
     }
 };
 
+Painter.prototype.paintRoom = function(room){
+    let result = this.enoughPaint(room);
+    if(result === true) {
+        room.getPainted();
+    }
+};
 module.exports = Painter;

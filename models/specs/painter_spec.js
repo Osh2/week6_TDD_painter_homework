@@ -38,16 +38,16 @@ describe("Painter", function(){
         leonThePainter.addPaint(bluePaint);
         const totalLitres = leonThePainter.totalPaintStock();
         //assert
-        assert.strictEqual(totalLitres, 15)
+        assert.strictEqual(totalLitres, 15);
     });
 
     it("should calculate if has enough paint for room (false)", function(){
         //act
         leonThePainter.addPaint(redPaint);
         leonThePainter.addPaint(bluePaint);
-        const result = leonThePainter.enoughPaint(bathroom)
+        let result = leonThePainter.enoughPaint(bathroom)
         //assert
-        assert.strictEqual(result, false)
+        assert.strictEqual(result, false);
     });
 
     it("should calculate if has enough paint for room (true)", function(){
@@ -57,8 +57,33 @@ describe("Painter", function(){
         leonThePainter.addPaint(redPaint);
         leonThePainter.addPaint(bluePaint);
         leonThePainter.addPaint(tartanPaint);
-        const result = leonThePainter.enoughPaint(bathroom);
+        let result = leonThePainter.enoughPaint(bathroom);
         //assert
-        assert.strictEqual(result, true)
+        assert.strictEqual(result, true);
     });
+
+    it("should paint room if it has enough paint (true)", function(){
+        //assert
+        const tartanPaint = new Paint(10)
+        //act
+        leonThePainter.addPaint(redPaint);
+        leonThePainter.addPaint(bluePaint);
+        leonThePainter.addPaint(tartanPaint);
+        leonThePainter.paintRoom(bathroom);
+        const isPainted = bathroom.isPainted;
+        //assert
+        assert.strictEqual(isPainted, true);
+    });
+
+    it("should paint room if it has enough paint (false)", function(){
+        //act
+        leonThePainter.addPaint(redPaint);
+        leonThePainter.addPaint(bluePaint);
+        leonThePainter.paintRoom(bathroom);
+        const isPainted = bathroom.isPainted;
+        //assert
+        assert.strictEqual(isPainted, false);
+    });
+
+
 });
