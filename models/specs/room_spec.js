@@ -10,6 +10,16 @@ describe("Room", function(){
         //assert
         assert.strictEqual(area, 35);
     });
+    
+    it("should start not painted", function(){
+        //arrange
+        diningRoom = new Room(50, false);
+        //act
+        isPainted = diningRoom.isPainted;
+        //assert
+        assert.strictEqual(isPainted, false)
+
+    });
 
 
 });
