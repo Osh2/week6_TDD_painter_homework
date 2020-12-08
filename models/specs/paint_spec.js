@@ -19,7 +19,11 @@ describe('Paint', function(){
 
     it("should have some paint", function(){
         //arrange
-        redPaint = new Paint()
+        redPaint = new Paint(5)
+        //act
+        litres = redPaint.num_litres
+        //assert
+        assert.strictEqual(litres, 5)
     });
 
 
