@@ -16,5 +16,13 @@ Painter.prototype.totalPaintStock = function(){
     return totalPaint;
 };
 
+Painter.prototype.enoughPaint = function(room){
+    let totalPaint = this.totalPaintStock();
+    if (totalPaint === room.area){
+        return true
+    } else {
+        return false
+    }
+};
 
 module.exports = Painter;
