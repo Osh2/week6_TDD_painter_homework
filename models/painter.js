@@ -3,5 +3,8 @@ const Painter = function(name) {
     this.paintStock = [];
 };
 
+Painter.prototype.addPaint = function(newPaint){
+    this.paintStock.push(newPaint);
+};
 
 module.exports = Painter;
