@@ -18,8 +18,16 @@ describe("Room", function(){
         isPainted = diningRoom.isPainted;
         //assert
         assert.strictEqual(isPainted, false)
-
     });
 
+    it("should be able to be painted", function(){
+        //arrange
+        kitchen = new Room(25, false);
+        //act
+        kitchen.getPainted();
+        isPainted = kitchen.isPainted
+        //assert
+        assert.strictEqual(isPainted, true)
+    });
 
 });
